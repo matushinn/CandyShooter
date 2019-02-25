@@ -277,6 +277,10 @@ Prefab:
       propertyPath: m_Name
       value: CanydySquareRed (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
   m_IsPrefabAsset: 0
@@ -454,6 +458,10 @@ Prefab:
     - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
       propertyPath: m_Name
       value: CanydySquareGreen (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+      propertyPath: m_TagString
+      value: Candy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
@@ -703,10 +711,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92b8632d2ed3143578dc80ec92ac7341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candyPrefab: {fileID: 1331813619552708, guid: 409a4327672b544a7b3146ef091b53a5,
-    type: 2}
+  candyPrefabs:
+  - {fileID: 1331813619552708, guid: 409a4327672b544a7b3146ef091b53a5, type: 2}
+  - {fileID: 1120722197016370, guid: c655135165f044dc3b024e4e9da0ec28, type: 2}
+  - {fileID: 1294529020836804, guid: 283f744bdf2124b95bdf92d173c28097, type: 2}
+  - {fileID: 1111434042515288, guid: 8a28f488334a5413f830fc2672fc9082, type: 2}
+  candySquarePrefabs:
+  - {fileID: 1195890281488610, guid: 44a86d77bf753405c8423612420feb26, type: 2}
+  - {fileID: 1269865150449040, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
+  - {fileID: 1204336556052042, guid: 5afb61abcad934419b8358d952505762, type: 2}
+  - {fileID: 1340323871445392, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
+  candyHolder: {fileID: 967866948}
   shootSpeed: 540
   shotTorque: 100
+  baseWidth: 5
 --- !u!4 &447828777
 Transform:
   m_ObjectHideFlags: 0
@@ -844,6 +862,10 @@ Prefab:
       propertyPath: m_Name
       value: CanydySquareGreen (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
   m_IsPrefabAsset: 0
@@ -886,6 +908,59 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &654988460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654988463}
+  - component: {fileID: 654988462}
+  - component: {fileID: 654988461}
+  m_Layer: 0
+  m_Name: CandyDestroyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &654988461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654988460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f746747febbb4728822e7a23033090f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &654988462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654988460}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &654988463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654988460}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -7, z: -5}
+  m_LocalScale: {x: 17, y: 1, z: 12}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &732346942
 Prefab:
   m_ObjectHideFlags: 0
@@ -1031,6 +1106,10 @@ Prefab:
       propertyPath: m_Name
       value: CanydySquareRed (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
   m_IsPrefabAsset: 0
@@ -1170,88 +1249,46 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 967866947}
     m_Modifications:
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.65
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.000000021855694
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f3f4eaeb66b40b749a80783fedfe8be1, type: 2}
-    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
-      propertyPath: m_Name
-      value: CanydySquareGreen
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: fe9d32f3793c84a3589494332c72a299, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &958611500 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 4025218056623580, guid: fe9d32f3793c84a3589494332c72a299,
+    type: 2}
   m_PrefabInternal: {fileID: 958611499}
---- !u!1 &958611501 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635,
-    type: 3}
-  m_PrefabInternal: {fileID: 958611499}
---- !u!64 &958611502
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 958611501}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
---- !u!54 &958611503
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 958611501}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 2
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &967866946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967866947}
+  - component: {fileID: 967866948}
   m_Layer: 0
   m_Name: CandyHolder
   m_TagString: Untagged
@@ -1300,6 +1338,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967866948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 967866946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b0a7118c41b4833bcc4a7a3f4829cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1034391317
 Prefab:
   m_ObjectHideFlags: 0
@@ -1416,88 +1465,46 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 967866947}
     m_Modifications:
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
       propertyPath: m_LocalPosition.x
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.000000021855694
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5c64902d2755bb14bb0f2e576363e6ee, type: 2}
-    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
-      propertyPath: m_Name
-      value: CanydySquareYellow
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: d70fa985cf95140b6bb351a9bc276d41, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1088784561 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 4800141055071964, guid: d70fa985cf95140b6bb351a9bc276d41,
+    type: 2}
   m_PrefabInternal: {fileID: 1088784560}
---- !u!1 &1088784562 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635,
-    type: 3}
-  m_PrefabInternal: {fileID: 1088784560}
---- !u!64 &1088784563
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1088784562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
---- !u!54 &1088784564
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1088784562}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 2
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &1089337592
 Prefab:
   m_ObjectHideFlags: 0
@@ -1544,6 +1551,10 @@ Prefab:
     - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
       propertyPath: m_Name
       value: CanydySquareYellow (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+      propertyPath: m_TagString
+      value: Candy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
@@ -1984,6 +1995,10 @@ Prefab:
       propertyPath: m_Name
       value: CanydySquareYellow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
   m_IsPrefabAsset: 0
@@ -2038,88 +2053,46 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 967866947}
     m_Modifications:
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.65
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.000000021855694
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762, type: 2}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8e0c55d5f3f917443a19f69c46fb5ff5, type: 2}
-    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
-      propertyPath: m_Name
-      value: CanydySquareRed
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 5afb61abcad934419b8358d952505762, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1876985741 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 4458112613463622, guid: 5afb61abcad934419b8358d952505762,
+    type: 2}
   m_PrefabInternal: {fileID: 1876985740}
---- !u!1 &1876985742 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635,
-    type: 3}
-  m_PrefabInternal: {fileID: 1876985740}
---- !u!64 &1876985743
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1876985742}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
---- !u!54 &1876985744
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1876985742}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 2
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &1881849402
 Prefab:
   m_ObjectHideFlags: 0
@@ -2166,6 +2139,10 @@ Prefab:
     - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
       propertyPath: m_Name
       value: CanydySquareBlue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+      propertyPath: m_TagString
+      value: Candy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
@@ -2307,6 +2284,10 @@ Prefab:
       propertyPath: m_Name
       value: CanydySquareBlue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+      propertyPath: m_TagString
+      value: Candy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
   m_IsPrefabAsset: 0
@@ -2356,85 +2337,43 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 967866947}
     m_Modifications:
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26, type: 2}
       propertyPath: m_LocalPosition.z
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.000000021855694
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26, type: 2}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+    - target: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26, type: 2}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f625a5d98237bb349aa488d3d80cd386, type: 2}
-    - target: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
-      propertyPath: m_Name
-      value: CanydySquareBlue
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 44a86d77bf753405c8423612420feb26, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &2112159047 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: f2beb3c7f93196540bcbffa9a4a19635,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 4047610432985046, guid: 44a86d77bf753405c8423612420feb26,
+    type: 2}
   m_PrefabInternal: {fileID: 2112159046}
---- !u!1 &2112159048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: f2beb3c7f93196540bcbffa9a4a19635,
-    type: 3}
-  m_PrefabInternal: {fileID: 2112159046}
---- !u!64 &2112159049
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2112159048}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: f2beb3c7f93196540bcbffa9a4a19635, type: 3}
---- !u!54 &2112159050
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2112159048}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 2
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0

@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{D6213565-B603-99B1-C3B7-FD76FEED4C61}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Shooter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CandyHolder.cs">
     <Files>
       <File FileName="Assets/Scripts/Pusher.cs" Line="11" Column="5" />
-      <File FileName="Assets/Scripts/Shooter.cs" Line="7" Column="7" />
+      <File FileName="Assets/Scripts/Shooter.cs" Line="59" Column="9" />
+      <File FileName="Assets/Scripts/CandyDestroyer.cs" Line="17" Column="5" />
+      <File FileName="Assets/Scripts/CandyHolder.cs" Line="7" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +12,7 @@
           <Node name="CandyShooter" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Shooter.cs" selected="True" />
+                <Node name="CandyHolder.cs" selected="True" />
               </Node>
             </Node>
           </Node>
