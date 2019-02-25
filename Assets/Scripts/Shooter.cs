@@ -5,8 +5,13 @@ using UnityEngine;
 public class Shooter : MonoBehaviour {
 
     const int SphereCandyFrequency = 3;
+    const int MaxShotPower = 5;
+    const int RecoverySeconds = 3;
 
     int sampleCandyCount;
+    int shotPower = MaxShotPower;
+
+    AudioSource shootSound;
 
     public GameObject[] candyPrefabs;
     public GameObject[] candySquarePrefabs;
@@ -14,9 +19,13 @@ public class Shooter : MonoBehaviour {
     public float shootSpeed;
     public float shotTorque;
     public float baseWidth;
+    
+    private void Start()
+    {
+        shootSound = GetComponent<AudioSource>();
+    }
 
-
-   // Update is called once per frame
+    // Update is called once per frame
     void Update () {
         if (Input.GetButtonDown("Fire1")) Shot();
 	}
@@ -57,6 +66,8 @@ public class Shooter : MonoBehaviour {
 
         //キャンディを生成できる条件外ならばShotしない
         if (candyHolder.GetCandyAmount() <= 0) return;
+        //ショットパワーのチェック
+        if (shotPower <= 0) return;
 
         //プレファブからCandオブジェクトを生成
         GameObject candy = (GameObject)Instantiate(SampleCandy(), GetInstantiatePosition(), Quaternion.identity);
@@ -71,7 +82,37 @@ public class Shooter : MonoBehaviour {
 
         //candyのストック消費
         candyHolder.ConsumeCandy();
+
+        //ShotPowerを消費
+        ConsumePower();
+
+        //サウンドの再生
+        shootSound.Play();
     }
+    private void OnGUI()
+    {
+        GUI.color = Color.black;
+
+        //キャンディーのストック数を表示
+        string label = "";
+
+        for (int i = 0; i < shotPower; i++) label = label + "+";
+
+        GUI.Label(new Rect(0, 15, 100, 30), label);
+    }
+    void ConsumePower()
+    {
+        //ShotPowerを消費すると同時に回復のカウントをスタート
+        shotPower--;
+        StartCoroutine(RecoverPower());
+    }
+    IEnumerator RecoverPower()
+    {
+        //一定秒数を待った後にShotPowerを回復
+        yield return new WaitForSeconds(RecoverySeconds);
+        shotPower++;
+    }
+
 
 
 }
